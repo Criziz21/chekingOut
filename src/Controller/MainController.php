@@ -12,8 +12,9 @@ class MainController extends AbstractController
     public function homepage(): Response
     {
         $testvar = 10;
+
         return $this->render('main/homepage.html.twig', [
-            'testvar' => $testvar
+            'testvar' => $testvar,
         ]);
     }
 }
