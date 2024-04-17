@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}ChekingOut{% endblock %}
+
+{% block body %}
+<h1>Hello</h1>
+This is Twig: Testvar-{{ testvar }}<br>
+<div>
+    Check {{ testvar * 10 }}
+    {% if testvar > 9 %}
+        <p>testvar is greater than 9 </p>
+    {% endif %}
+</div>
+{% for i in range( low=1, high=10, step=2) %}
+    {{ loop.index0 }},
+{% endfor %}
+{% endblock %}
