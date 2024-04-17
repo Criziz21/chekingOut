@@ -14,7 +14,7 @@ class DrinkApiController extends AbstractController
     {
         $var = [
             new Drink(1, 'Gorrila', 'energy drink', '450', 'lowmid'),
-            new Drink(2, 'Drive me','energy drink','300','good',)
+            new Drink(2, 'Drive me', 'energy drink', '300', 'good'),
         ];
 
         // return new Response(json_encode($var));

@@ -4,13 +4,12 @@ namespace App\Model;
 
 class Drink
 {
-        public function __construct(private int $id,
-            private string $name,
-            private string $type,
-            private int $cost,
-            private string $taste, )
+    public function __construct(private int $id,
+        private string $name,
+        private string $type,
+        private int $cost,
+        private string $taste, )
     {
-        
     }
 
     public function getId(): int
