@@ -1,17 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }}ChekingOut{% endblock %}
+{% block title %}{{ parent() }}to ChekingOut{% endblock %}
 
 {% block body %}
-<h1>Hello</h1>
-This is Twig: Testvar-{{ testvar }}<br>
+<h1>
+    Drinks
+</h1>
 <div>
-    Check {{ testvar * 10 }}
-    {% if testvar > 9 %}
-        <p>testvar is greater than 9 </p>
+ 
+    {% if tvar|length > 0 %}
+    Browse through {{ tvar|length }} drinks!
+    <h2>Drinks table</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            {% for drink in tvar %}
+                <td>{{ drink.name }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Type</th>
+            {% for drink in tvar %}
+                <td>{{ drink.type }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Cost</th>
+            {% for drink in tvar %}
+                <td>{{ drink.cost }}$</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>Taste</th>
+            {% for drink in tvar %}
+                <td>{{ drink.taste }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+    {% else %}
+    <h3>Nothing found!</h3>
     {% endif %}
 </div>
-{% for i in range( low=1, high=10, step=2) %}
-    {{ loop.index0 }},
-{% endfor %}
+
 {% endblock %}

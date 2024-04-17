@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\Drink;
 use App\Repository\DrinkRepository;
 // use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
