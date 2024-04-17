@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Model\Drink;
-use Psr\Log\LoggerInterface;
+use App\Repository\DrinkRepository;
+// use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,14 +12,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class DrinkApiController extends AbstractController
 {
     #[Route(path: '/api/drinks', name: 'getDrinks')]
-    public function getCollection(LoggerInterface $logger): Response
+    public function getCollection(DrinkRepository $repository): Response
     {
-        // dd($logger);
-        $logger->info('Drinks collection retrieved!');
-        $var = [
-            new Drink(1, 'Gorrila', 'energy drink', '450', 'lowmid'),
-            new Drink(2, 'Drive me', 'energy drink', '300', 'good'),
-        ];
+        $var = $repository->findAll();
 
         // return new Response(json_encode($var));
         return $this->json($var);
